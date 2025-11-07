@@ -30,7 +30,6 @@ const Quiz: React.FC = () => {
     // Hint: You might want to check for a function in the core logic to help with this.
       quizCore.nextQuestion();
       setSelectedAnswer(null);
-      const currentQuestion = quizCore.getCurrentQuestion();
   } 
 
   const score = quizCore.getScore();
@@ -44,6 +43,12 @@ const Quiz: React.FC = () => {
         <p>Final Score: {score} out of {num_questions}</p>
       </div>
     );
+  }
+
+  let buttonText = "Next Question";
+
+  if (!quizCore.hasNextQuestion()) {
+    buttonText = "Submit";
   }
 
   return (
@@ -67,7 +72,7 @@ const Quiz: React.FC = () => {
       <h3>Selected Answer:</h3>
       <p>{selectedAnswer ?? 'No answer selected'}</p>
 
-      <button onClick={handleButtonClick}>Next Question</button>
+      <button onClick={handleButtonClick}>{buttonText}</button>
     </div>
   );
 };
