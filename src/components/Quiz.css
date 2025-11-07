@@ -2,6 +2,9 @@
 TODO: Enhance User Experience by adding visual highlights to selected answers.
 Hint: You can use the className attribute for highlighting. */
 .selected {
+    background-color: #d1ecf1;      /* Light blue highlight */
+    border: 2px solid #3498db;      /* Accent border */
+    color: #000;  
     cursor: pointer; /* Change cursor on hover for interactivity */
   }
   
